@@ -1,0 +1,2129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reale Tech - Há mais de 20 anos conectando empresas ao futuro da tecnologia. Soluções em TI, segurança e produtividade.">
+    <title>Reale Tech - Conectando empresas ao futuro da tecnologia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-yellow': '#FFC107',
+                        'brand-brown': '#8D6E63',
+                        'brand-dark': '#3E2723',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Header Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="font-bold text-2xl text-brand-dark">Reale Tech</div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="javascript:void(0)" onclick="showPage('home')" class="nav-link text-gray-700 hover:text-brand-brown transition">Home</a>
+                    <a href="javascript:void(0)" onclick="showPage('about')" class="nav-link text-gray-700 hover:text-brand-brown transition">Sobre</a>
+                    <a href="javascript:void(0)" onclick="showPage('solutions')" class="nav-link text-gray-700 hover:text-brand-brown transition">Soluções</a>
+                    <a href="javascript:void(0)" onclick="showPage('segments')" class="nav-link text-gray-700 hover:text-brand-brown transition">Segmentos</a>
+                    <a href="javascript:void(0)" onclick="showPage('blog')" class="nav-link text-gray-700 hover:text-brand-brown transition">Blog</a>
+                    <a href="javascript:void(0)" onclick="showPage('contact')" class="nav-link text-gray-700 hover:text-brand-brown transition">Contato</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="javascript:void(0)" onclick="showPage('contact')" class="hidden sm:inline-block bg-brand-yellow text-brand-dark px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition">
+                        Fale Conosco
+                    </a>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden flex items-center p-2 rounded-md text-gray-700 hover:text-brand-brown hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-brown transition">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path class="block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 shadow-lg relative z-50">
+            <div class="px-4 py-2 space-y-1">
+                <a href="javascript:void(0)" onclick="showPage('home'); toggleMobileMenu()" class="block px-3 py-2 rounded-md text-gray-700 hover:text-brand-brown hover:bg-gray-50 transition">Home</a>
+                <a href="javascript:void(0)" onclick="showPage('about'); toggleMobileMenu()" class="block px-3 py-2 rounded-md text-gray-700 hover:text-brand-brown hover:bg-gray-50 transition">Sobre</a>
+                <a href="javascript:void(0)" onclick="showPage('solutions'); toggleMobileMenu()" class="block px-3 py-2 rounded-md text-gray-700 hover:text-brand-brown hover:bg-gray-50 transition">Soluções</a>
+                <a href="javascript:void(0)" onclick="showPage('segments'); toggleMobileMenu()" class="block px-3 py-2 rounded-md text-gray-700 hover:text-brand-brown hover:bg-gray-50 transition">Segmentos</a>
+                <a href="javascript:void(0)" onclick="showPage('blog'); toggleMobileMenu()" class="block px-3 py-2 rounded-md text-gray-700 hover:text-brand-brown hover:bg-gray-50 transition">Blog</a>
+                <a href="javascript:void(0)" onclick="showPage('contact'); toggleMobileMenu()" class="block px-3 py-2 rounded-md text-gray-700 hover:text-brand-brown hover:bg-gray-50 transition">Contato</a>
+                <div class="pt-2 border-t border-gray-200">
+                    <a href="javascript:void(0)" onclick="showPage('contact'); toggleMobileMenu()" class="block w-full text-center bg-brand-yellow text-brand-dark px-4 py-2 rounded-lg font-medium hover:bg-yellow-500 transition">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content Container -->
+    <div class="page-container">
+        <!-- Home Page -->
+        <div id="page-home" class="page active">
+            <!-- Hero Section - Carousel -->
+            <section class="relative h-screen overflow-hidden">
+                <div class="hero-carousel">
+                    <div class="hero-slides flex transition-transform duration-1000 ease-in-out h-full">
+                        <!-- Slide 1: Team Collaboration -->
+                        <div class="hero-slide flex-shrink-0 w-full h-full relative flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-br from-brand-dark to-brand-brown"></div>
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner1.png')"></div>
+                            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                                    Há mais de 20 anos conectando empresas ao futuro da tecnologia
+                                </h1>
+                                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                                    Transformamos negócios através de soluções tecnológicas inovadoras, 
+                                    aumentando produtividade, segurança e resultados para empresas de todos os portes.
+                                </p>
+                                <a href="javascript:void(0)" onclick="showPage('contact')" class="inline-block bg-brand-yellow text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105">
+                                    Fale com um Especialista
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2: Data Security -->
+                        <div class="hero-slide flex-shrink-0 w-full h-full relative flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-blue-700"></div>
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner4.png')"></div>
+                            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                                    Segurança da Informação de Classe Mundial
+                                </h1>
+                                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                                    Protegemos seus dados e sistemas com as mais avançadas soluções 
+                                    de segurança, garantindo tranquilidade para seu negócio crescer.
+                                </p>
+                                <a href="javascript:void(0)" onclick="showPage('solutions')" class="inline-block bg-brand-yellow text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105">
+                                    Conheça Nossas Soluções
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: Cloud Infrastructure -->
+                        <div class="hero-slide flex-shrink-0 w-full h-full relative flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-br from-green-900 to-green-700"></div>
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner5.png')"></div>
+                            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                                    Infraestrutura em Nuvem Escalável
+                                </h1>
+                                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                                    Migre para a nuvem com segurança e eficiência. Nossa infraestrutura 
+                                    garante performance, disponibilidade e crescimento ilimitado.
+                                </p>
+                                <a href="javascript:void(0)" onclick="showPage('segments')" class="inline-block bg-brand-yellow text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105">
+                                    Explore por Segmento
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4: Innovation & AI -->
+                        <div class="hero-slide flex-shrink-0 w-full h-full relative flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-br from-purple-900 to-purple-700"></div>
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner2.png')"></div>
+                            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                                    Inovação e Inteligência Artificial
+                                </h1>
+                                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                                    Implementamos soluções de IA e automação que revolucionam 
+                                    processos e impulsionam a competitividade da sua empresa.
+                                </p>
+                                <a href="javascript:void(0)" onclick="showPage('about')" class="inline-block bg-brand-yellow text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105">
+                                    Nossa História
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 5: Support & Consulting -->
+                        <div class="hero-slide flex-shrink-0 w-full h-full relative flex items-center justify-center">
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-900 to-orange-700"></div>
+                            <div class="absolute inset-0 bg-black opacity-50"></div>
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/banner6.png')"></div>
+                            <div class="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+                                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                                    Suporte Especializado 24/7
+                                </h1>
+                                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                                    Nossa equipe de especialistas está sempre disponível para 
+                                    garantir que sua tecnologia funcione perfeitamente.
+                                </p>
+                                <a href="javascript:void(0)" onclick="showPage('contact')" class="inline-block bg-brand-yellow text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105">
+                                    Solicite Suporte
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Carousel Controls -->
+                <button class="hero-prev absolute left-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-4 rounded-full transition z-20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                <button class="hero-next absolute right-8 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-4 rounded-full transition z-20">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+                
+                <!-- Hero Carousel Indicators -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+                    <button class="hero-indicator w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full transition" data-slide="0"></button>
+                    <button class="hero-indicator w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full transition" data-slide="1"></button>
+                    <button class="hero-indicator w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full transition" data-slide="2"></button>
+                    <button class="hero-indicator w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full transition" data-slide="3"></button>
+                    <button class="hero-indicator w-4 h-4 bg-white bg-opacity-50 hover:bg-opacity-75 rounded-full transition" data-slide="4"></button>
+                </div>
+            </section>
+
+            <!-- Three Pillars Section -->
+            <section class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-4xl font-bold text-brand-dark mb-16">Nossos Três Pilares</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="p-8 rounded-lg bg-gray-50 hover:shadow-lg transition">
+                            <div class="text-5xl mb-4">🚀</div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Produtividade</h3>
+                            <p class="text-gray-600">
+                                Otimizamos processos e implementamos ferramentas que aceleram 
+                                o crescimento do seu negócio com eficiência máxima.
+                            </p>
+                        </div>
+                        <div class="p-8 rounded-lg bg-gray-50 hover:shadow-lg transition">
+                            <div class="text-5xl mb-4">🛡️</div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Segurança</h3>
+                            <p class="text-gray-600">
+                                Protegemos seus dados e sistemas com as mais avançadas 
+                                soluções de segurança da informação do mercado.
+                            </p>
+                        </div>
+                        <div class="p-8 rounded-lg bg-gray-50 hover:shadow-lg transition">
+                            <div class="text-5xl mb-4">📈</div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Resultados</h3>
+                            <p class="text-gray-600">
+                                Entregamos soluções que geram impacto real no seu ROI, 
+                                com métricas claras e resultados mensuráveis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="py-20 bg-brand-dark text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-4xl font-bold mb-16">O que nossos clientes dizem</h2>
+                    <div class="max-w-4xl mx-auto relative">
+                        <div class="testimonial-carousel overflow-hidden">
+                            <div class="testimonial-track flex transition-transform duration-500 ease-in-out">
+                                <!-- Depoimento 1 -->
+                                <div class="testimonial flex-shrink-0 w-full">
+                                    <p class="text-xl italic mb-6">
+                                        "A Reale Tech transformou completamente nossa operação. 
+                                        Aumentamos nossa produtividade em 40% no primeiro ano."
+                                    </p>
+                                    <div class="flex items-center justify-center space-x-4">
+                                        <img src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" 
+                                             alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+                                        <div>
+                                            <div class="font-semibold">Maria Silva</div>
+                                            <div class="text-gray-300">CEO - TechnoSoft Ltda</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Depoimento 2 -->
+                                <div class="testimonial flex-shrink-0 w-full">
+                                    <p class="text-xl italic mb-6">
+                                        "O suporte da Reale Tech é excepcional. Problemas resolvidos 
+                                        rapidamente e com total profissionalismo."
+                                    </p>
+                                    <div class="flex items-center justify-center space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" 
+                                             alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+                                        <div>
+                                            <div class="font-semibold">João Santos</div>
+                                            <div class="text-gray-300">Diretor de TI - Innovare Corp</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Depoimento 3 -->
+                                <div class="testimonial flex-shrink-0 w-full">
+                                    <p class="text-xl italic mb-6">
+                                        "Implementação de segurança impecável. Dormimos tranquilos 
+                                        sabendo que nossos dados estão protegidos."
+                                    </p>
+                                    <div class="flex items-center justify-center space-x-4">
+                                        <img src="https://plus.unsplash.com/premium_photo-1689551670902-19b441a6afde?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJhbmRvbSUyMHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D" 
+                                             alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+                                        <div>
+                                            <div class="font-semibold">Ana Costa</div>
+                                            <div class="text-gray-300">CISO - SecureData Inc</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Depoimento 4 -->
+                                <div class="testimonial flex-shrink-0 w-full">
+                                    <p class="text-xl italic mb-6">
+                                        "A infraestrutura em nuvem implementada pela Reale Tech 
+                                        revolucionou nossa capacidade de crescimento."
+                                    </p>
+                                    <div class="flex items-center justify-center space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" 
+                                             alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+                                        <div>
+                                            <div class="font-semibold">Carlos Oliveira</div>
+                                            <div class="text-gray-300">CTO - CloudFirst Solutions</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Depoimento 5 -->
+                                <div class="testimonial flex-shrink-0 w-full">
+                                    <p class="text-xl italic mb-6">
+                                        "Parceria de longo prazo que só cresce. A Reale Tech 
+                                        entende verdadeiramente as necessidades do nosso negócio."
+                                    </p>
+                                    <div class="flex items-center justify-center space-x-4">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww" 
+                                             alt="Cliente" class="w-12 h-12 rounded-full object-cover">
+                                        <div>
+                                            <div class="font-semibold">Patricia Almeida</div>
+                                            <div class="text-gray-300">Gerente Geral - Global Enterprises</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Controles do Carrossel -->
+                        <button class="carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 bg-brand-yellow text-brand-dark p-3 rounded-full hover:bg-yellow-400 transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button class="carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-8 bg-brand-yellow text-brand-dark p-3 rounded-full hover:bg-yellow-400 transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        
+                        <!-- Indicadores -->
+                        <div class="flex justify-center mt-8 space-x-2">
+                            <button class="indicator w-3 h-3 bg-brand-yellow rounded-full" data-slide="0"></button>
+                            <button class="indicator w-3 h-3 bg-gray-500 rounded-full" data-slide="1"></button>
+                            <button class="indicator w-3 h-3 bg-gray-500 rounded-full" data-slide="2"></button>
+                            <button class="indicator w-3 h-3 bg-gray-500 rounded-full" data-slide="3"></button>
+                            <button class="indicator w-3 h-3 bg-gray-500 rounded-full" data-slide="4"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Services Cards Section -->
+            <section class="py-20 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl font-bold text-brand-dark mb-4">Nossos Principais Serviços</h2>
+                        <p class="text-xl text-gray-600">Soluções tecnológicas completas para impulsionar seu negócio</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <!-- Card 1: Infraestrutura de TI -->
+                        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition p-8 text-center">
+                            <div class="text-5xl mb-6">🏗️</div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Infraestrutura de TI</h3>
+                            <p class="text-gray-600 mb-6">
+                                Planejamento, implementação e gerenciamento completo 
+                                da sua infraestrutura tecnológica.
+                            </p>
+                            <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                                <li>• Servidores e Storage</li>
+                                <li>• Redes e Conectividade</li>
+                                <li>• Virtualização</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Card 2: Segurança da Informação -->
+                        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition p-8 text-center">
+                            <div class="text-5xl mb-6">🛡️</div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Segurança da Informação</h3>
+                            <p class="text-gray-600 mb-6">
+                                Proteção avançada para seus dados e sistemas 
+                                com as melhores práticas de segurança.
+                            </p>
+                            <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                                <li>• Firewall e Antivírus</li>
+                                <li>• Backup e Disaster Recovery</li>
+                                <li>• Monitoramento 24/7</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Card 3: Consultoria Especializada -->
+                        <div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition p-8 text-center">
+                            <div class="text-5xl mb-6">💡</div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-4">Consultoria Especializada</h3>
+                            <p class="text-gray-600 mb-6">
+                                Análise e planejamento estratégico para otimizar 
+                                seus investimentos em tecnologia.
+                            </p>
+                            <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                                <li>• Análise de Necessidades</li>
+                                <li>• Planejamento Estratégico</li>
+                                <li>• Otimização de Custos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="javascript:void(0)" onclick="showPage('solutions')" 
+                           class="inline-block bg-brand-yellow text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105">
+                            Ver Todas as Soluções
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="page-about" class="page">
+            <div class="pt-20">
+                <!-- About Hero -->
+                <section class="py-20 bg-brand-dark text-white">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-5xl font-bold mb-6">Sobre a Reale Tech</h1>
+                        <p class="text-xl text-gray-200">
+                            Há mais de 20 anos conectando empresas ao futuro da tecnologia
+                        </p>
+                    </div>
+                </section>
+
+                <!-- About Content -->
+                <section class="py-20 bg-gray-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                            <div>
+                                <h2 class="text-4xl font-bold text-brand-dark mb-6">Nossa História</h2>
+                                <p class="text-lg text-gray-700 mb-6">
+                                    Com mais de duas décadas de experiência no mercado de tecnologia, 
+                                    a Reale Tech se consolidou como uma referência em soluções inovadoras 
+                                    para empresas que buscam crescimento e competitividade.
+                                </p>
+                                <p class="text-lg text-gray-700 mb-6">
+                                    Nossa missão é ser o parceiro estratégico que conecta negócios ao futuro, 
+                                    oferecendo tecnologias que realmente fazem a diferença no dia a dia das organizações.
+                                </p>
+                                <div class="flex items-center space-x-4 text-brand-brown font-semibold">
+                                    <div class="text-3xl font-bold">20+</div>
+                                    <div>Anos de experiência transformando empresas</div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <img src="https://realetech.com.br/wp-content/uploads/2025/03/imagem1_carrossel-1024x576.jpg" 
+                                     alt="Equipe Reale Tech" 
+                                     class="rounded-lg shadow-2xl">
+                            </div>
+                        </div>
+
+                        <!-- Mission, Vision, Values -->
+                        <div class="grid md:grid-cols-3 gap-8 mb-20">
+                            <div class="text-center p-6">
+                                <div class="text-4xl mb-4">🎯</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Missão</h3>
+                                <p class="text-gray-600">
+                                    Conectar empresas ao futuro através de soluções tecnológicas 
+                                    inovadoras que geram resultados reais.
+                                </p>
+                            </div>
+                            <div class="text-center p-6">
+                                <div class="text-4xl mb-4">👁️</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Visão</h3>
+                                <p class="text-gray-600">
+                                    Ser reconhecida como a principal referência em transformação 
+                                    digital para empresas de todos os portes.
+                                </p>
+                            </div>
+                            <div class="text-center p-6">
+                                <div class="text-4xl mb-4">⭐</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Valores</h3>
+                                <p class="text-gray-600">
+                                    Inovação, transparência, excelência no atendimento 
+                                    e compromisso com resultados.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div class="bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-3xl font-bold text-brand-dark mb-8 text-center">Nossa Trajetória</h3>
+                            <div class="space-y-8">
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-brand-yellow text-brand-dark font-bold px-3 py-1 rounded">2004</div>
+                                    <div class="text-gray-700">Fundação da Reale Tech com foco em suporte técnico</div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-brand-yellow text-brand-dark font-bold px-3 py-1 rounded">2010</div>
+                                    <div class="text-gray-700">Expansão para soluções de infraestrutura corporativa</div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-brand-yellow text-brand-dark font-bold px-3 py-1 rounded">2015</div>
+                                    <div class="text-gray-700">Especialização em segurança da informação e backup</div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-brand-yellow text-brand-dark font-bold px-3 py-1 rounded">2020</div>
+                                    <div class="text-gray-700">Migração completa para soluções em nuvem</div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-brand-yellow text-brand-dark font-bold px-3 py-1 rounded">2024</div>
+                                    <div class="text-gray-700">Liderança em transformação digital corporativa</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Solutions Page -->
+        <div id="page-solutions" class="page">
+            <div class="pt-20">
+                <!-- Solutions Hero -->
+                <section class="py-20 bg-brand-dark text-white">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-5xl font-bold mb-6">Nossas Soluções</h1>
+                        <p class="text-xl text-gray-200">
+                            Portfólio completo de serviços tecnológicos para impulsionar seu negócio
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Solutions Grid -->
+                <section class="py-20 bg-gray-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Suporte TI -->
+                            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                                <div class="text-4xl mb-6">💻</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Suporte TI</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Suporte técnico especializado 24/7 para manter sua operação sempre funcionando com máxima eficiência.
+                                </p>
+                                <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                                    <li>• Suporte remoto e presencial</li>
+                                    <li>• Monitoramento 24/7</li>
+                                    <li>• Help desk especializado</li>
+                                    <li>• SLA garantido</li>
+                                </ul>
+                                <button class="bg-brand-brown text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                                    Saiba mais
+                                </button>
+                            </div>
+
+                            <!-- Infraestrutura -->
+                            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                                <div class="text-4xl mb-6">🏗️</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Infraestrutura</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Planejamento, implementação e gerenciamento de infraestrutura tecnológica robusta e escalável.
+                                </p>
+                                <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                                    <li>• Arquitetura de rede</li>
+                                    <li>• Servidores e storage</li>
+                                    <li>• Virtualização</li>
+                                    <li>• Disaster recovery</li>
+                                </ul>
+                                <button class="bg-brand-brown text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                                    Saiba mais
+                                </button>
+                            </div>
+
+                            <!-- Segurança -->
+                            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                                <div class="text-4xl mb-6">🔒</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Segurança da Informação</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Proteção completa contra ameaças digitais com as mais avançadas soluções de segurança.
+                                </p>
+                                <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                                    <li>• Firewall e antivírus</li>
+                                    <li>• Monitoramento de ameaças</li>
+                                    <li>• Compliance LGPD</li>
+                                    <li>• Auditoria de segurança</li>
+                                </ul>
+                                <button class="bg-brand-brown text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                                    Saiba mais
+                                </button>
+                            </div>
+
+                            <!-- Backup em Nuvem -->
+                            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                                <div class="text-4xl mb-6">☁️</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Backup em Nuvem</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Soluções seguras e automatizadas de backup e recuperação de dados com alta disponibilidade.
+                                </p>
+                                <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                                    <li>• Backup automático</li>
+                                    <li>• Recuperação rápida</li>
+                                    <li>• Múltiplas localizações</li>
+                                    <li>• Criptografia avançada</li>
+                                </ul>
+                                <button class="bg-brand-brown text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                                    Saiba mais
+                                </button>
+                            </div>
+
+                            <!-- Outsourcing -->
+                            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                                <div class="text-4xl mb-6">🤝</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Outsourcing de TI</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Terceirização completa do departamento de TI com equipe especializada e qualidade garantida.
+                                </p>
+                                <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                                    <li>• Equipe dedicada</li>
+                                    <li>• Gestão completa de TI</li>
+                                    <li>• Redução de custos</li>
+                                    <li>• Foco no core business</li>
+                                </ul>
+                                <button class="bg-brand-brown text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                                    Saiba mais
+                                </button>
+                            </div>
+
+                            <!-- Consultoria -->
+                            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition">
+                                <div class="text-4xl mb-6">⚡</div>
+                                <h3 class="text-2xl font-bold text-brand-dark mb-4">Consultoria Digital</h3>
+                                <p class="text-gray-600 mb-6">
+                                    Consultoria estratégica especializada em transformação digital para modernizar seu negócio.
+                                </p>
+                                <ul class="text-sm text-gray-600 mb-6 space-y-2">
+                                    <li>• Diagnóstico tecnológico</li>
+                                    <li>• Roadmap de inovação</li>
+                                    <li>• Implementação de soluções</li>
+                                    <li>• Treinamento de equipes</li>
+                                </ul>
+                                <button class="bg-brand-brown text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                                    Saiba mais
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="py-20 bg-brand-yellow">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 class="text-4xl font-bold text-brand-dark mb-6">
+                            Pronto para transformar seu negócio?
+                        </h2>
+                        <p class="text-xl text-brand-dark mb-8">
+                            Entre em contato e descubra qual solução é ideal para sua empresa
+                        </p>
+                        <a href="javascript:void(0)" onclick="showPage('contact')" class="inline-block bg-brand-dark text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition">
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Segments Page -->
+        <div id="page-segments" class="page">
+            <div class="pt-20">
+                <!-- Segments Hero -->
+                <section class="py-20 bg-brand-dark text-white">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-5xl font-bold mb-6">Segmentos Atendidos</h1>
+                        <p class="text-xl text-gray-200">
+                            Soluções personalizadas para empresas de todos os portes
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Segments Content -->
+                <section class="py-20 bg-gray-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="space-y-16">
+                            <!-- Pequenas Empresas -->
+                            <div class="grid md:grid-cols-2 gap-12 items-center">
+                                <div>
+                                    <div class="flex items-center mb-6">
+                                        <div class="text-5xl mr-4">🏪</div>
+                                        <h2 class="text-4xl font-bold text-brand-dark">Pequenas Empresas</h2>
+                                    </div>
+                                    <p class="text-lg text-gray-700 mb-6">
+                                        Soluções escaláveis e acessíveis para startups e pequenos negócios 
+                                        que buscam crescimento sustentável com tecnologia de ponta.
+                                    </p>
+                                    <ul class="text-gray-600 space-y-2 mb-6">
+                                        <li>✓ Suporte técnico básico</li>
+                                        <li>✓ Backup automático na nuvem</li>
+                                        <li>✓ Segurança essencial</li>
+                                        <li>✓ Consultoria inicial gratuita</li>
+                                        <li>✓ Preços competitivos</li>
+                                </div>
+                                <div class="bg-white p-8 rounded-lg shadow-lg">
+                                    <img src="https://i.pinimg.com/736x/8a/90/98/8a909882b3c6a2fcba6e1d4a42dabd42.jpg" 
+                                         alt="Pequenas Empresas" class="rounded-lg mb-6">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-brand-brown mb-2">1-50</div>
+                                        <div class="text-gray-600">Funcionários</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Médias Empresas -->
+                            <div class="grid md:grid-cols-2 gap-12 items-center">
+                                <div class="order-2 md:order-1">
+                                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                                        <img src="https://realetech.com.br/wp-content/uploads/2025/03/cabeamento-1024x576.jpg" 
+                                             alt="Médias Empresas" class="rounded-lg mb-6">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-brand-brown mb-2">51-500</div>
+                                            <div class="text-gray-600">Funcionários</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="order-1 md:order-2">
+                                    <div class="flex items-center mb-6">
+                                        <div class="text-5xl mr-4">🏢</div>
+                                        <h2 class="text-4xl font-bold text-brand-dark">Médias Empresas</h2>
+                                    </div>
+                                    <p class="text-lg text-gray-700 mb-6">
+                                        Tecnologias robustas para empresas em expansão que precisam 
+                                        de maior complexidade, integração e performance.
+                                    </p>
+                                    <ul class="text-gray-600 space-y-2 mb-6">
+                                        <li>✓ Infraestrutura completa</li>
+                                        <li>✓ Suporte 24/7</li>
+                                        <li>✓ Segurança avançada</li>
+                                        <li>✓ Disaster recovery</li>
+                                        <li>✓ Consultoria estratégica</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Grandes Empresas -->
+                            <div class="grid md:grid-cols-2 gap-12 items-center">
+                                <div>
+                                    <div class="flex items-center mb-6">
+                                        <div class="text-5xl mr-4">🏭</div>
+                                        <h2 class="text-4xl font-bold text-brand-dark">Grandes Empresas</h2>
+                                    </div>
+                                    <p class="text-lg text-gray-700 mb-6">
+                                        Soluções enterprise de alta disponibilidade para corporações 
+                                        com operações críticas, compliance rigoroso e múltiplas filiais.
+                                    </p>
+                                    <ul class="text-gray-600 space-y-2 mb-6">
+                                        <li>✓ Arquitetura enterprise</li>
+                                        <li>✓ Alta disponibilidade</li>
+                                        <li>✓ Compliance total</li>
+                                        <li>✓ Equipe dedicada</li>
+                                        <li>✓ SLA customizado</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-8 rounded-lg shadow-lg">
+                                    <img src="https://i.redd.it/ykej788jikg71.jpg" 
+                                         alt="Grandes Empresas" class="rounded-lg mb-6">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold text-brand-brown mb-2">500+</div>
+                                        <div class="text-gray-600">Funcionários</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cases Section -->
+                <section class="py-20 bg-white">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-4xl font-bold text-brand-dark mb-4">Cases de Sucesso</h2>
+                            <p class="text-xl text-gray-600">
+                                Conheça alguns projetos que transformaram negócios
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                                <div class="h-16 flex items-center justify-center mb-4">
+                                    <div class="text-2xl font-bold text-brand-brown">TechFlow Solutions</div>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Startup de Tecnologia</p>
+                                <p class="text-sm text-gray-700">Infraestrutura completa para crescimento</p>
+                            </div>
+                            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                                <div class="h-16 flex items-center justify-center mb-4">
+                                    <div class="text-2xl font-bold text-brand-brown">Metalúrgica Bahia</div>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Indústria Metalúrgica</p>
+                                <p class="text-sm text-gray-700">Migração completa para nuvem</p>
+                            </div>
+                            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                                <div class="h-16 flex items-center justify-center mb-4">
+                                    <div class="text-2xl font-bold text-brand-brown">Construtora Vale Verde</div>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Construtora e Incorporadora</p>
+                                <p class="text-sm text-gray-700">Implementação de segurança enterprise</p>
+                            </div>
+                            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                                <div class="h-16 flex items-center justify-center mb-4">
+                                    <div class="text-2xl font-bold text-brand-brown">Grupo Recôncavo</div>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Holding Empresarial</p>
+                                <p class="text-sm text-gray-700">Outsourcing completo de TI</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Blog Page -->
+        <div id="page-blog" class="page">
+            <div class="pt-20">
+                <!-- Blog Hero -->
+                <section class="py-20 bg-brand-dark text-white">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-5xl font-bold mb-6">Blog & Insights</h1>
+                        <p class="text-xl text-gray-200">
+                            Fique por dentro das últimas tendências em tecnologia
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Featured Post -->
+                <section class="py-20 bg-gray-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="bg-white rounded-lg shadow-xl overflow-hidden mb-16">
+                            <div class="grid md:grid-cols-2">
+                                <div>
+                                    <img src="https://wallpapers.com/images/hd/1920x1080-hd-space-x7ca6j9gg67sjip4.jpg" 
+                                         alt="Post em Destaque" class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-8">
+                                    <div class="text-brand-yellow text-sm font-semibold mb-2">POST EM DESTAQUE</div>
+                                    <h2 class="text-3xl font-bold text-brand-dark mb-4">
+                                        O Futuro da Segurança Digital: Tendências para 2024
+                                    </h2>
+                                    <p class="text-gray-600 mb-6">
+                                        Com o aumento exponencial de ameaças cibernéticas, 
+                                        as empresas precisam estar preparadas com as mais 
+                                        avançadas estratégias de proteção digital.
+                                    </p>
+                                    <div class="flex items-center mb-6">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBlYJfFRvdZG0LNuiRs6l1PNx1bIfZkqZIsQ&s" 
+                                             alt="Autor" class="w-10 h-10 rounded-full mr-3">
+                                        <div>
+                                            <div class="font-semibold text-brand-dark">João Santos</div>
+                                            <div class="text-sm text-gray-500">Especialista em Segurança</div>
+                                        </div>
+                                        <div class="ml-auto text-sm text-gray-500">15 Jan 2024</div>
+                                    </div>
+                                    <button class="bg-brand-brown text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition">
+                                        Leia o Artigo Completo
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blog Posts Grid -->
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                                <img src="https://www.shutterstock.com/image-photo/sofia-bulgaria-19-january-2023-260nw-2368399035.jpg" 
+                                     alt="Artigo" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <div class="text-brand-yellow text-sm font-semibold mb-2">INFRAESTRUTURA</div>
+                                    <h3 class="text-xl font-bold text-brand-dark mb-3">
+                                        Como a Nuvem Pode Transformar Seu Negócio
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Entenda os benefícios da migração para nuvem e 
+                                        como implementar com sucesso.
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-sm text-gray-500">12 Jan 2024</div>
+                                        <button class="text-brand-brown font-medium hover:text-brand-dark">
+                                            Leia mais →
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR839R9pB5hFy1rXYKu1PNiYwXjuD-OsH4B0w&s" 
+                                     alt="Artigo" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <div class="text-brand-yellow text-sm font-semibold mb-2">INOVAÇÃO</div>
+                                    <h3 class="text-xl font-bold text-brand-dark mb-3">
+                                        IA e Automação: O Futuro da Produtividade
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Explore como inteligência artificial pode otimizar 
+                                        processos e aumentar resultados.
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-sm text-gray-500">10 Jan 2024</div>
+                                        <button class="text-brand-brown font-medium hover:text-brand-dark">
+                                            Leia mais →
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJieCzrhU5o4D9QEIh4fi6r_NeAWsqz9EpXA&s" 
+                                     alt="Artigo" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <div class="text-brand-yellow text-sm font-semibold mb-2">BACKUP</div>
+                                    <h3 class="text-xl font-bold text-brand-dark mb-3">
+                                        Estratégias de Backup: Protegendo Seus Dados
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Conheça as melhores práticas para garantir a 
+                                        segurança e recuperação dos seus dados.
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-sm text-gray-500">08 Jan 2024</div>
+                                        <button class="text-brand-brown font-medium hover:text-brand-dark">
+                                            Leia mais →
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                                <img src="https://wallpapercave.com/wp/wp3788129.jpg" 
+                                     alt="Artigo" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <div class="text-brand-yellow text-sm font-semibold mb-2">PEQUENAS EMPRESAS</div>
+                                    <h3 class="text-xl font-bold text-brand-dark mb-3">
+                                        TI para Pequenos Negócios: Por Onde Começar
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Guia completo para implementar soluções de TI 
+                                        em pequenas e médias empresas.
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-sm text-gray-500">05 Jan 2024</div>
+                                        <button class="text-brand-brown font-medium hover:text-brand-dark">
+                                            Leia mais →
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUF5nFRcDUWtH9x1eVGbItAdqihw--w8JIww&s" 
+                                     alt="Artigo" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <div class="text-brand-yellow text-sm font-semibold mb-2">TRABALHO REMOTO</div>
+                                    <h3 class="text-xl font-bold text-brand-dark mb-3">
+                                        Tecnologias para o Trabalho Remoto Eficiente
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Ferramentas e estratégias para maximizar a 
+                                        produtividade em equipes remotas.
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-sm text-gray-500">03 Jan 2024</div>
+                                        <button class="text-brand-brown font-medium hover:text-brand-dark">
+                                            Leia mais →
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition">
+                                <img src="https://i.pinimg.com/736x/19/e1/3c/19e13c58ff5cf5ffe040169d30751737.jpg" 
+                                     alt="Artigo" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <div class="text-brand-yellow text-sm font-semibold mb-2">OUTSOURCING</div>
+                                    <h3 class="text-xl font-bold text-brand-dark mb-3">
+                                        Terceirização de TI: Vantagens e Desafios
+                                    </h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Entenda quando e como terceirizar seu 
+                                        departamento de TI com sucesso.
+                                    </p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="text-sm text-gray-500">01 Jan 2024</div>
+                                        <button class="text-brand-brown font-medium hover:text-brand-dark">
+                                            Leia mais →
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Newsletter Section -->
+                        <div class="bg-brand-dark text-white p-8 rounded-lg mt-16 text-center">
+                            <h3 class="text-2xl font-bold mb-4">Receba nossas novidades</h3>
+                            <p class="text-gray-300 mb-6">
+                                Assine nossa newsletter e receba os melhores insights sobre tecnologia
+                            </p>
+                            <div class="flex max-w-md mx-auto">
+                                <input type="email" placeholder="Seu e-mail" 
+                                       class="flex-1 p-3 rounded-l-lg text-gray-800 focus:outline-none">
+                                <button class="bg-brand-yellow text-brand-dark px-6 py-3 rounded-r-lg font-semibold hover:bg-yellow-500 transition">
+                                    Assinar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="page-contact" class="page">
+            <div class="pt-20">
+                <!-- Contact Hero -->
+                <section class="py-20 bg-brand-dark text-white">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h1 class="text-5xl font-bold mb-6">Entre em Contato</h1>
+                        <p class="text-xl text-gray-200">
+                            Pronto para transformar seu negócio? Fale com nossos especialistas
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Contact Content -->
+                <section class="py-20 bg-gray-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid lg:grid-cols-3 gap-12">
+                            <!-- Contact Info -->
+                            <div class="lg:col-span-1">
+                                <div class="bg-white p-8 rounded-lg shadow-lg">
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Informações de Contato</h3>
+                                    
+                                    <div class="space-y-6">
+                                        <div class="flex items-start space-x-4">
+                                            <div class="text-2xl">📍</div>
+                                            <div>
+                                                <h4 class="font-semibold text-brand-dark">Endereço</h4>
+                                                <p class="text-gray-600">R. Teixeira de Freitas, 48<br>Valença, BA - 45400-000</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start space-x-4">
+                                            <div class="text-2xl">📞</div>
+                                            <div>
+                                                <h4 class="font-semibold text-brand-dark">Telefone & WhatsApp</h4>
+                                                <p class="text-gray-600">(75) 2102-9200</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start space-x-4">
+                                            <div class="text-2xl">✉️</div>
+                                            <div>
+                                                <h4 class="font-semibold text-brand-dark">E-mail</h4>
+                                                <p class="text-gray-600">contato@realetech.com.br</p>
+                                                <p class="text-gray-600">suporte@realetech.com.br</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex items-start space-x-4">
+                                            <div class="text-2xl">🕒</div>
+                                            <div>
+                                                <h4 class="font-semibold text-brand-dark">Horário de Atendimento</h4>
+                                                <p class="text-gray-600">Segunda a Sexta: 8h às 18h</p>
+                                                <p class="text-gray-600">Suporte 24/7 disponível</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Social Media -->
+                                    <div class="mt-8 pt-8 border-t">
+                                        <h4 class="font-semibold text-brand-dark mb-4">Siga-nos</h4>
+                                        <div class="flex space-x-4">
+                                            <a href="https://facebook.com/realetechsolucoes" target="_blank" title="Siga-nos no Facebook" class="text-gray-400 hover:text-brand-brown transition p-2">
+                                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                                </svg>
+                                            </a>
+                                            <a href="https://instagram.com/realetechsolucoes" target="_blank" title="Siga-nos no Instagram" class="text-gray-400 hover:text-brand-brown transition p-2">
+                                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                                </svg>
+                                            </a>
+                                            <a href="https://linkedin.com/company/realetechsolucoes" target="_blank" title="Conecte-se conosco no LinkedIn" class="text-gray-400 hover:text-brand-brown transition p-2">
+                                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                                </svg>
+                                            </a>
+                                            <a href="https://twitter.com/realetechsolucoes" target="_blank" title="Siga-nos no Twitter" class="text-gray-400 hover:text-brand-brown transition p-2">
+                                                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Form -->
+                            <div class="lg:col-span-2">
+                                <div class="bg-white p-8 rounded-lg shadow-lg">
+                                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Envie sua Mensagem</h3>
+                                    <form>
+                                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Nome Completo *</label>
+                                                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:outline-none" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">E-mail *</label>
+                                                <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:outline-none" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Telefone *</label>
+                                                <input type="tel" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:outline-none" required>
+                                            </div>
+                                            <div>
+                                                <label class="block text-sm font-medium text-gray-700 mb-2">Empresa</label>
+                                                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:outline-none">
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Área de Interesse *</label>
+                                            <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:outline-none" required>
+                                                <option value="">Selecione uma opção</option>
+                                                <option value="suporte">Suporte TI</option>
+                                                <option value="infraestrutura">Infraestrutura</option>
+                                                <option value="seguranca">Segurança da Informação</option>
+                                                <option value="backup">Backup em Nuvem</option>
+                                                <option value="outsourcing">Outsourcing</option>
+                                                <option value="consultoria">Consultoria</option>
+                                                <option value="orcamento">Solicitar Orçamento Geral</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="mb-6">
+                                            <label class="block text-sm font-medium text-gray-700 mb-2">Mensagem *</label>
+                                            <textarea rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:outline-none" placeholder="Conte-nos mais sobre seu projeto, necessidade ou dúvida..." required></textarea>
+                                        </div>
+
+                                        <div class="mb-6">
+                                            <label class="flex items-center">
+                                                <input type="checkbox" class="mr-2" required>
+                                                <span class="text-sm text-gray-600">Aceito receber contatos da Reale Tech sobre soluções e novidades</span>
+                                            </label>
+                                        </div>
+
+                                        <div class="flex gap-4">
+                                            <button type="submit" class="bg-brand-yellow text-brand-dark px-8 py-4 rounded-lg text-lg font-semibold hover:bg-yellow-500 transition transform hover:scale-105">
+                                                Enviar Mensagem
+                                            </button>
+                                            <a href="https://wa.me/5575021029200?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20ou%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Reale%20Tech." target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition flex items-center justify-center">
+                                                <span class="mr-2">💬</span> WhatsApp
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Section -->
+                        <div class="mt-16 bg-white p-8 rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-bold text-brand-dark mb-8 text-center">Perguntas Frequentes</h3>
+                            <div class="space-y-4">
+                                <!-- FAQ Item 1 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(1)">
+                                        <span class="font-semibold text-brand-dark">Qual é o tempo de resposta para suporte?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-1" class="faq-answer hidden p-4 text-gray-600">
+                                        <p>Nosso tempo médio de resposta é de <strong>15 minutos para chamados urgentes</strong> e <strong>2 horas para demais solicitações</strong> durante horário comercial. Para suporte 24/7, mantemos plantão para clientes com contratos específicos, garantindo atendimento em até 30 minutos a qualquer momento.</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 2 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(2)">
+                                        <span class="font-semibold text-brand-dark">Vocês atendem empresas de que tamanho?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-2" class="faq-answer hidden p-4 text-gray-600">
+                                        <p>Atendemos desde <strong>microempresas e startups</strong> até <strong>grandes corporações e holdings</strong>. Nossos planos são totalmente personalizados:</p>
+                                        <ul class="mt-2 list-disc list-inside space-y-1">
+                                            <li><strong>Pequenos negócios:</strong> Soluções básicas e econômicas</li>
+                                            <li><strong>Médias empresas:</strong> Infraestrutura robusta e escalável</li>
+                                            <li><strong>Grandes corporações:</strong> Soluções enterprise completas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 3 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(3)">
+                                        <span class="font-semibold text-brand-dark">Como funciona o processo de orçamento?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-3" class="faq-answer hidden p-4 text-gray-600">
+                                        <p>O orçamento é <strong>100% gratuito</strong> e sem compromisso. Nosso processo:</p>
+                                        <ol class="mt-2 list-decimal list-inside space-y-1">
+                                            <li><strong>Diagnóstico inicial:</strong> Análise da infraestrutura atual</li>
+                                            <li><strong>Mapeamento de necessidades:</strong> Identificação de pontos críticos</li>
+                                            <li><strong>Proposta personalizada:</strong> Soluções sob medida para seu negócio</li>
+                                            <li><strong>Apresentação:</strong> Reunião para explicar todos os detalhes</li>
+                                        </ol>
+                                        <p class="mt-2">Tempo médio: 48 horas para entrega da proposta completa.</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 4 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(4)">
+                                        <span class="font-semibold text-brand-dark">Que tipo de garantia vocês oferecem?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-4" class="faq-answer hidden p-4 text-gray-600">
+                                        <p>Oferecemos <strong>múltiplas garantias</strong> dependendo do serviço:</p>
+                                        <ul class="mt-2 list-disc list-inside space-y-1">
+                                            <li><strong>Hardware:</strong> Garantia do fabricante + nossa garantia de serviço</li>
+                                            <li><strong>Instalação:</strong> 6 meses de garantia em configurações</li>
+                                            <li><strong>Desenvolvimento:</strong> 3 meses para correção de bugs</li>
+                                            <li><strong>SLA:</strong> Acordo de nível de serviço personalizado</li>
+                                            <li><strong>Suporte:</strong> Garantia de atendimento conforme contrato</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 5 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(5)">
+                                        <span class="font-semibold text-brand-dark">Vocês trabalham com quais tecnologias?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-5" class="faq-answer hidden p-4 text-gray-600">
+                                        <p>Trabalhamos com as <strong>principais tecnologias do mercado</strong>:</p>
+                                        <div class="mt-2 grid md:grid-cols-2 gap-4">
+                                            <div>
+                                                <p class="font-medium">Infraestrutura:</p>
+                                                <ul class="list-disc list-inside text-sm space-y-1">
+                                                    <li>Microsoft Azure, AWS, Google Cloud</li>
+                                                    <li>VMware, Hyper-V</li>
+                                                    <li>Windows Server, Linux</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium">Segurança:</p>
+                                                <ul class="list-disc list-inside text-sm space-y-1">
+                                                    <li>Firewall Fortinet, SonicWall</li>
+                                                    <li>Antivírus Corporativo</li>
+                                                    <li>Backup Veeam, Acronis</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 6 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(6)">
+                                        <span class="font-semibold text-brand-dark">É possível fazer uma visita técnica antes de contratar?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-6" class="faq-answer hidden p-4 text-gray-600">
+                                        <p><strong>Sim!</strong> A visita técnica é <strong>gratuita</strong> e altamente recomendada. Durante a visita:</p>
+                                        <ul class="mt-2 list-disc list-inside space-y-1">
+                                            <li>Analisamos toda a infraestrutura atual</li>
+                                            <li>Identificamos gargalos e oportunidades de melhoria</li>
+                                            <li>Fazemos demonstrações de soluções</li>
+                                            <li>Tiramos todas as dúvidas da equipe</li>
+                                            <li>Elaboramos relatório técnico detalhado</li>
+                                        </ul>
+                                        <p class="mt-2">Agende pelo WhatsApp ou formulário acima!</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 7 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(7)">
+                                        <span class="font-semibold text-brand-dark">Como funciona o contrato de outsourcing de TI?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-7" class="faq-answer hidden p-4 text-gray-600">
+                                        <p>No <strong>outsourcing de TI</strong>, assumimos toda a responsabilidade pela área de tecnologia:</p>
+                                        <ul class="mt-2 list-disc list-inside space-y-1">
+                                            <li><strong>Gestão completa:</strong> Infraestrutura, usuários e equipamentos</li>
+                                            <li><strong>Suporte dedicado:</strong> Equipe especializada para sua empresa</li>
+                                            <li><strong>Monitoramento 24/7:</strong> Prevenção de problemas</li>
+                                            <li><strong>Atualizações automáticas:</strong> Sistemas sempre em dia</li>
+                                            <li><strong>Relatórios mensais:</strong> Transparência total</li>
+                                        </ul>
+                                        <p class="mt-2"><strong>Contratos flexíveis:</strong> 12, 24 ou 36 meses com valores fixos mensais.</p>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 8 -->
+                                <div class="faq-item border border-gray-200 rounded-lg">
+                                    <button class="faq-question w-full p-4 text-left bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center rounded-lg" onclick="toggleFaq(8)">
+                                        <span class="font-semibold text-brand-dark">Atendem outras cidades além de Valença?</span>
+                                        <svg class="faq-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div id="faq-answer-8" class="faq-answer hidden p-4 text-gray-600">
+                                        <p><strong>Sim!</strong> Atendemos toda a <strong>região do Recôncavo Baiano</strong> e outras localidades:</p>
+                                        <div class="mt-2 grid md:grid-cols-2 gap-4">
+                                            <div>
+                                                <p class="font-medium">Atendimento Presencial:</p>
+                                                <ul class="list-disc list-inside text-sm space-y-1">
+                                                    <li>Valença e região</li>
+                                                    <li>Salvador (parceiros)</li>
+                                                    <li>Feira de Santana</li>
+                                                    <li>Cruz das Almas</li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <p class="font-medium">Suporte Remoto:</p>
+                                                <ul class="list-disc list-inside text-sm space-y-1">
+                                                    <li>Todo território nacional</li>
+                                                    <li>Acesso remoto seguro</li>
+                                                    <li>Configuração à distância</li>
+                                                    <li>Monitoramento 24/7</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="font-bold text-2xl text-brand-yellow mb-4">Reale Tech</div>
+                    <p class="text-gray-300 mb-4">
+                        Conectando empresas ao futuro da tecnologia há mais de 20 anos.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/realetechsolucoes" target="_blank" title="Siga-nos no Facebook" class="text-gray-300 hover:text-brand-yellow transition p-2">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/realetechsolucoes" target="_blank" title="Siga-nos no Instagram" class="text-gray-300 hover:text-brand-yellow transition p-2">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/realetechsolucoes" target="_blank" title="Siga-nos no Twitter" class="text-gray-300 hover:text-brand-yellow transition p-2">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/company/realetechsolucoes" target="_blank" title="Conecte-se conosco no LinkedIn" class="text-gray-300 hover:text-brand-yellow transition p-2">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" onclick="showPage('about')" class="text-gray-300 hover:text-white transition">Sobre</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('solutions')" class="text-gray-300 hover:text-white transition">Soluções</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('segments')" class="text-gray-300 hover:text-white transition">Segmentos</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('blog')" class="text-gray-300 hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Soluções</h4>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" onclick="showPage('solutions')" class="text-gray-300 hover:text-white transition">Suporte TI</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('solutions')" class="text-gray-300 hover:text-white transition">Infraestrutura</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('solutions')" class="text-gray-300 hover:text-white transition">Segurança</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('solutions')" class="text-gray-300 hover:text-white transition">Backup</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>📍 R. Teixeira de Freitas, 48 - Valença, BA, 45400-000</li>
+                        <li>📞 (75) 2102-9200</li>
+                        <li>✉️ contato@realetech.com.br</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Links de Políticas -->
+            <div class="mt-12 text-center">
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400 mb-6">
+                    <a href="javascript:void(0)" onclick="openModal('privacy-modal')" class="hover:text-white transition">Política de Privacidade</a>
+                    <span>•</span>
+                    <a href="javascript:void(0)" onclick="openModal('terms-modal')" class="hover:text-white transition">Termos de Uso</a>
+                    <span>•</span>
+                    <a href="javascript:void(0)" onclick="openModal('cookies-modal')" class="hover:text-white transition">Política de Cookies</a>
+                    <span>•</span>
+                    <a href="javascript:void(0)" onclick="openModal('lgpd-modal')" class="hover:text-white transition">LGPD</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Reale Tech. Todos os direitos reservados. | 
+                   Desenvolvido por <a href="https://github.com/RCalmunges" target="_blank" class="hover:text-brand-yellow transition font-medium">RCalmunges</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Política de Privacidade -->
+    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-brand-dark">Política de Privacidade</h2>
+                    <button onclick="closeModal('privacy-modal')" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="prose max-w-none">
+                    <p class="text-sm text-gray-600 mb-4">Última atualização: Janeiro de 2024</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">1. Informações que Coletamos</h3>
+                    <p class="mb-4">A Reale Tech coleta as seguintes informações:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Dados de identificação: nome, e-mail, telefone, empresa</li>
+                        <li>Informações de navegação: cookies, IP, dispositivo utilizado</li>
+                        <li>Dados de comunicação: mensagens via formulários ou e-mail</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">2. Como Usamos suas Informações</h3>
+                    <p class="mb-4">Utilizamos seus dados para:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Fornecer nossos serviços e suporte técnico</li>
+                        <li>Responder às suas solicitações e dúvidas</li>
+                        <li>Enviar comunicações sobre nossos produtos e serviços</li>
+                        <li>Melhorar nosso website e experiência do usuário</li>
+                        <li>Cumprir obrigações legais e contratuais</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">3. Compartilhamento de Dados</h3>
+                    <p class="mb-4">Não vendemos, alugamos ou compartilhamos seus dados pessoais com terceiros, exceto:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Com seu consentimento explícito</li>
+                        <li>Para cumprir obrigações legais</li>
+                        <li>Com prestadores de serviços que nos auxiliam (sob contrato de confidencialidade)</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">4. Segurança dos Dados</h3>
+                    <p class="mb-4">Implementamos medidas técnicas e organizacionais apropriadas para proteger seus dados contra acesso não autorizado, alteração, divulgação ou destruição.</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">5. Seus Direitos (LGPD)</h3>
+                    <p class="mb-4">Você tem direito a:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Acessar seus dados pessoais</li>
+                        <li>Corrigir dados incompletos, inexatos ou desatualizados</li>
+                        <li>Solicitar a exclusão de dados desnecessários</li>
+                        <li>Revogar seu consentimento</li>
+                        <li>Solicitar portabilidade dos dados</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">6. Contato</h3>
+                    <p class="mb-4">Para exercer seus direitos ou esclarecer dúvidas sobre esta política, entre em contato:</p>
+                    <ul class="list-none pl-0 mb-4 space-y-1">
+                        <li><strong>E-mail:</strong> privacidade@realetech.com.br</li>
+                        <li><strong>Telefone:</strong> (75) 2102-9200</li>
+                        <li><strong>Endereço:</strong> R. Teixeira de Freitas, 48 - Valença, BA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Termos de Uso -->
+    <div id="terms-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-brand-dark">Termos de Uso</h2>
+                    <button onclick="closeModal('terms-modal')" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="prose max-w-none">
+                    <p class="text-sm text-gray-600 mb-4">Última atualização: Janeiro de 2024</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">1. Aceitação dos Termos</h3>
+                    <p class="mb-4">Ao acessar e usar o website da Reale Tech, você concorda em cumprir estes Termos de Uso e todas as leis e regulamentos aplicáveis.</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">2. Uso do Website</h3>
+                    <p class="mb-4">Você pode usar nosso website para:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Obter informações sobre nossos serviços</li>
+                        <li>Entrar em contato conosco</li>
+                        <li>Solicitar orçamentos e propostas</li>
+                        <li>Acessar conteúdo educativo sobre tecnologia</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">3. Restrições de Uso</h3>
+                    <p class="mb-4">É proibido:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Usar o website para fins ilegais ou não autorizados</li>
+                        <li>Tentar obter acesso não autorizado a sistemas</li>
+                        <li>Interferir ou interromper o funcionamento do website</li>
+                        <li>Reproduzir, distribuir ou modificar conteúdo sem autorização</li>
+                        <li>Usar automatização para coleta de dados (web scraping)</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">4. Propriedade Intelectual</h3>
+                    <p class="mb-4">Todo o conteúdo do website (textos, imagens, logos, designs) é propriedade da Reale Tech e está protegido por direitos autorais e outras leis de propriedade intelectual.</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">5. Limitação de Responsabilidade</h3>
+                    <p class="mb-4">A Reale Tech não se responsabiliza por:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Interrupções no serviço ou indisponibilidade temporária</li>
+                        <li>Danos resultantes do uso inadequado do website</li>
+                        <li>Conteúdo de terceiros ou links externos</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">6. Modificações</h3>
+                    <p class="mb-4">Reservamos o direito de modificar estes termos a qualquer momento. As alterações entrarão em vigor imediatamente após a publicação no website.</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">7. Lei Aplicável</h3>
+                    <p class="mb-4">Estes termos são regidos pelas leis brasileiras. Qualquer disputa será resolvida nos tribunais competentes de São Paulo/SP.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Política de Cookies -->
+    <div id="cookies-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-brand-dark">Política de Cookies</h2>
+                    <button onclick="closeModal('cookies-modal')" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="prose max-w-none">
+                    <p class="text-sm text-gray-600 mb-4">Última atualização: Janeiro de 2024</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">O que são Cookies</h3>
+                    <p class="mb-4">Cookies são pequenos arquivos de texto armazenados no seu dispositivo quando você visita um website. Eles nos ajudam a melhorar sua experiência de navegação.</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Tipos de Cookies que Utilizamos</h3>
+                    
+                    <h4 class="text-md font-semibold text-brand-dark mb-2">1. Cookies Essenciais</h4>
+                    <p class="mb-3">Necessários para o funcionamento básico do website:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Cookies de sessão para manter você logado</li>
+                        <li>Cookies de segurança para proteção contra fraudes</li>
+                        <li>Cookies de preferências de idioma</li>
+                    </ul>
+                    
+                    <h4 class="text-md font-semibold text-brand-dark mb-2">2. Cookies de Performance</h4>
+                    <p class="mb-3">Coletam informações sobre como você usa nosso website:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Google Analytics para análise de tráfego</li>
+                        <li>Dados de páginas mais visitadas</li>
+                        <li>Tempo de permanência no site</li>
+                    </ul>
+                    
+                    <h4 class="text-md font-semibold text-brand-dark mb-2">3. Cookies Funcionais</h4>
+                    <p class="mb-3">Melhoram a funcionalidade e personalização:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Lembrar suas preferências</li>
+                        <li>Personalizar conteúdo baseado em interesses</li>
+                        <li>Facilitar o preenchimento de formulários</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Gerenciar Cookies</h3>
+                    <p class="mb-4">Você pode controlar cookies através das configurações do seu navegador:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li><strong>Chrome:</strong> Configurações > Privacidade e segurança > Cookies</li>
+                        <li><strong>Firefox:</strong> Opções > Privacidade e Segurança</li>
+                        <li><strong>Safari:</strong> Preferências > Privacidade</li>
+                        <li><strong>Edge:</strong> Configurações > Cookies e permissões do site</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Cookies de Terceiros</h3>
+                    <p class="mb-4">Utilizamos cookies de parceiros confiáveis:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li><strong>Google Analytics:</strong> Para análise de tráfego</li>
+                        <li><strong>Google Fonts:</strong> Para carregamento de fontes</li>
+                        <li><strong>Redes Sociais:</strong> Para integração com plataformas sociais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de LGPD -->
+    <div id="lgpd-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto modal-content">
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-brand-dark">Conformidade com a LGPD</h2>
+                    <button onclick="closeModal('lgpd-modal')" class="text-gray-400 hover:text-gray-600 text-2xl">&times;</button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="prose max-w-none">
+                    <p class="text-sm text-gray-600 mb-4">Em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018)</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Nosso Compromisso com a LGPD</h3>
+                    <p class="mb-4">A Reale Tech está comprometida em proteger os dados pessoais de nossos clientes, parceiros e usuários em total conformidade com a Lei Geral de Proteção de Dados (LGPD).</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Bases Legais para Tratamento</h3>
+                    <p class="mb-4">Tratamos seus dados pessoais com base nas seguintes hipóteses legais:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li><strong>Consentimento:</strong> Quando você autoriza expressamente</li>
+                        <li><strong>Execução de contrato:</strong> Para cumprir obrigações contratuais</li>
+                        <li><strong>Legítimo interesse:</strong> Para melhorar nossos serviços</li>
+                        <li><strong>Cumprimento de obrigação legal:</strong> Quando exigido por lei</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Seus Direitos como Titular</h3>
+                    <p class="mb-4">Conforme a LGPD, você tem os seguintes direitos:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li><strong>Confirmação:</strong> Saber se tratamos seus dados</li>
+                        <li><strong>Acesso:</strong> Conhecer quais dados tratamos</li>
+                        <li><strong>Correção:</strong> Corrigir dados incompletos ou incorretos</li>
+                        <li><strong>Anonimização:</strong> Solicitar anonimização dos dados</li>
+                        <li><strong>Bloqueio:</strong> Bloquear dados desnecessários</li>
+                        <li><strong>Eliminação:</strong> Excluir dados tratados com base no consentimento</li>
+                        <li><strong>Portabilidade:</strong> Transferir dados para outro fornecedor</li>
+                        <li><strong>Informação:</strong> Saber com quem compartilhamos seus dados</li>
+                        <li><strong>Revogação:</strong> Revogar o consentimento a qualquer momento</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Como Exercer seus Direitos</h3>
+                    <p class="mb-4">Para exercer qualquer um dos seus direitos ou esclarecer dúvidas sobre o tratamento de dados:</p>
+                    <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                        <p><strong>Encarregado de Proteção de Dados (DPO)</strong></p>
+                        <p><strong>E-mail:</strong> dpo@realetech.com.br</p>
+                        <p><strong>Telefone:</strong> (75) 2102-9200</p>
+                        <p><strong>Endereço:</strong> R. Teixeira de Freitas, 48 - Valença, BA - CEP: 45400-000</p>
+                    </div>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Medidas de Segurança</h3>
+                    <p class="mb-4">Implementamos medidas técnicas e administrativas para proteger seus dados:</p>
+                    <ul class="list-disc pl-6 mb-4 space-y-1">
+                        <li>Criptografia de dados sensíveis</li>
+                        <li>Controles de acesso rigorosos</li>
+                        <li>Monitoramento contínuo de segurança</li>
+                        <li>Treinamento regular da equipe</li>
+                        <li>Auditorias periódicas de conformidade</li>
+                    </ul>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Retenção de Dados</h3>
+                    <p class="mb-4">Mantemos seus dados pessoais apenas pelo tempo necessário para as finalidades informadas ou conforme exigido por lei, respeitando sempre o princípio da necessidade.</p>
+                    
+                    <h3 class="text-lg font-semibold text-brand-dark mb-3">Reclamações à ANPD</h3>
+                    <p class="mb-4">Caso não fique satisfeito com nossas respostas, você pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD) através do site: www.gov.br/anpd</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/5575021029200?text=Ol%C3%A1%21%20Vim%20do%20site%20da%20Reale%20Tech%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20em%20TI." target="_blank" rel="noopener noreferrer" title="Fale conosco no WhatsApp" 
+           class="whatsapp-btn bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-110 pulse-sometimes flex items-center justify-center w-14 h-14">
+            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+            </svg>
+        </a>
+    </div>
+
+    <style>
+        .page {
+            display: none;
+            min-height: 100vh;
+        }
+        .page.active {
+            display: block;
+        }
+        .nav-link.active {
+            color: #8D6E63 !important;
+            font-weight: 600;
+        }
+        .pulse-sometimes {
+            animation: pulseOccasionally 4s infinite;
+        }
+        @keyframes pulseOccasionally {
+            0%, 85% { transform: scale(1); }
+            90% { transform: scale(1.1); }
+            95% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .testimonial-carousel {
+            position: relative;
+        }
+        .indicator {
+            transition: background-color 0.3s ease;
+        }
+        .indicator:hover {
+            background-color: #FFC107;
+        }
+        
+        /* Hero Carousel Styles */
+        .hero-carousel {
+            position: relative;
+            height: 100%;
+        }
+        .hero-indicator.active {
+            background-color: white !important;
+            background-opacity: 1 !important;
+        }
+        .hero-slides {
+            will-change: transform;
+        }
+        
+        /* Modal Styles */
+        .modal-content {
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .prose h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .prose h4 {
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .prose p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .prose ul {
+            margin-bottom: 1rem;
+        }
+        
+        .prose li {
+            line-height: 1.5;
+        }
+        
+        /* Mobile Menu Styles */
+        #mobile-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 60;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        #mobile-menu.hidden {
+            display: none !important;
+        }
+        
+        #mobile-menu:not(.hidden) {
+            display: block !important;
+        }
+        
+        /* Ensure mobile menu appears above everything else */
+        @media (max-width: 767px) {
+            #mobile-menu {
+                z-index: 70 !important;
+            }
+            
+            nav {
+                position: relative;
+            }
+        }
+    </style>
+
+    <script type="module">
+        // SPA Navigation System
+        let currentPage = 'home';
+
+        function showPage(pageName) {
+            try {
+                // Hide all pages
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show selected page
+                const targetPage = document.getElementById(`page-${pageName}`);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    currentPage = pageName;
+                    
+                    // Update navigation active state
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    
+                    // Update page title
+                    updatePageTitle(pageName);
+                } else {
+                    console.warn(`Page '${pageName}' not found`);
+                }
+            } catch (error) {
+                console.error('Error navigating to page:', error);
+            }
+        }
+
+        function updatePageTitle(pageName) {
+            const titles = {
+                'home': 'Reale Tech - Conectando empresas ao futuro da tecnologia',
+                'about': 'Sobre Nós - Reale Tech',
+                'solutions': 'Soluções - Reale Tech',
+                'segments': 'Segmentos - Reale Tech',
+                'blog': 'Blog & Insights - Reale Tech',
+                'contact': 'Contato - Reale Tech'
+            };
+            document.title = titles[pageName] || 'Reale Tech';
+        }
+
+        // Make showPage function globally available
+        window.showPage = showPage;
+
+        // Initialize with home page
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('home');
+        });
+
+        // Form submission handlers
+        document.addEventListener('submit', function(e) {
+            if (e.target.tagName === 'FORM') {
+                e.preventDefault();
+                alert('Obrigado pelo seu interesse! Nossa equipe entrará em contato em breve.');
+            }
+        });
+
+        // Add scroll animations for visible sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Testimonials Carousel System
+        let currentSlide = 0;
+        const totalSlides = 5;
+        
+        function updateCarousel() {
+            const track = document.querySelector('.testimonial-track');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            if (track) {
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update indicators
+                indicators.forEach((indicator, index) => {
+                    if (index === currentSlide) {
+                        indicator.classList.remove('bg-gray-500');
+                        indicator.classList.add('bg-brand-yellow');
+                    } else {
+                        indicator.classList.remove('bg-brand-yellow');
+                        indicator.classList.add('bg-gray-500');
+                    }
+                });
+            }
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+        
+        // Auto-advance carousel
+        function startAutoSlide() {
+            setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+        
+        // Initialize carousel controls
+        function initCarousel() {
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Start auto-advance
+            setTimeout(startAutoSlide, 2000); // Wait 2 seconds before starting auto-advance
+        }
+
+        // WhatsApp button functionality
+        function openWhatsApp() {
+            window.open('https://wa.me/5575021029200?text=Ol%C3%A1%21%20Vim%20do%20site%20da%20Reale%20Tech%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20em%20TI.', '_blank');
+        }
+
+        // Add WhatsApp button click handler
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.whatsapp-btn')) {
+                openWhatsApp();
+            }
+        });
+        
+        // Hero Carousel System
+        let currentHeroSlide = 0;
+        const totalHeroSlides = 5;
+        
+        function updateHeroCarousel() {
+            const heroSlides = document.querySelector('.hero-slides');
+            const heroIndicators = document.querySelectorAll('.hero-indicator');
+            
+            if (heroSlides) {
+                heroSlides.style.transform = `translateX(-${currentHeroSlide * 100}%)`;
+                
+                // Update indicators
+                heroIndicators.forEach((indicator, index) => {
+                    if (index === currentHeroSlide) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+        }
+        
+        function nextHeroSlide() {
+            currentHeroSlide = (currentHeroSlide + 1) % totalHeroSlides;
+            updateHeroCarousel();
+        }
+        
+        function prevHeroSlide() {
+            currentHeroSlide = (currentHeroSlide - 1 + totalHeroSlides) % totalHeroSlides;
+            updateHeroCarousel();
+        }
+        
+        function goToHeroSlide(slideIndex) {
+            currentHeroSlide = slideIndex;
+            updateHeroCarousel();
+        }
+        
+        // Auto-advance hero carousel
+        function startHeroAutoSlide() {
+            setInterval(nextHeroSlide, 6000); // Change slide every 6 seconds
+        }
+        
+        // Initialize hero carousel controls
+        function initHeroCarousel() {
+            const heroPrevBtn = document.querySelector('.hero-prev');
+            const heroNextBtn = document.querySelector('.hero-next');
+            const heroIndicators = document.querySelectorAll('.hero-indicator');
+            
+            if (heroPrevBtn) heroPrevBtn.addEventListener('click', prevHeroSlide);
+            if (heroNextBtn) heroNextBtn.addEventListener('click', nextHeroSlide);
+            
+            heroIndicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => goToHeroSlide(index));
+            });
+            
+            // Set initial state
+            updateHeroCarousel();
+            
+            // Start auto-advance after a delay
+            setTimeout(startHeroAutoSlide, 3000);
+        }
+
+        // Modal System
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+        }
+        
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }
+        }
+        
+        // Close modal when clicking outside content
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('fixed') && e.target.classList.contains('inset-0')) {
+                const modalId = e.target.id;
+                if (modalId && modalId.includes('modal')) {
+                    closeModal(modalId);
+                }
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close any open modal
+                const openModals = document.querySelectorAll('[id$="-modal"]:not(.hidden)');
+                openModals.forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+        
+        // Make modal functions globally available
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        
+        // Mobile Menu System
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const pathElements = mobileMenuBtn.querySelectorAll('path');
+            
+            if (mobileMenu.classList.contains('hidden')) {
+                // Show menu
+                mobileMenu.classList.remove('hidden');
+                // Change icon to X
+                pathElements[0].classList.add('hidden');
+                pathElements[1].classList.remove('hidden');
+            } else {
+                // Hide menu
+                mobileMenu.classList.add('hidden');
+                // Change icon back to hamburger
+                pathElements[0].classList.remove('hidden');
+                pathElements[1].classList.add('hidden');
+            }
+        }
+        
+        // Initialize mobile menu when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+        });
+        
+        // Make mobile menu function globally available
+        window.toggleMobileMenu = toggleMobileMenu;
+
+        // FAQ Accordion System
+        function toggleFaq(faqNumber) {
+            const answer = document.getElementById(`faq-answer-${faqNumber}`);
+            const icon = document.querySelector(`[onclick="toggleFaq(${faqNumber})"] .faq-icon`);
+            
+            if (answer && icon) {
+                if (answer.classList.contains('hidden')) {
+                    // Show answer
+                    answer.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    // Hide answer
+                    answer.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        }
+        
+        // Make FAQ function globally available
+        window.toggleFaq = toggleFaq;
+
+        // Initialize carousels when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                initCarousel(); // Testimonials carousel
+                initHeroCarousel(); // Hero carousel
+            }, 500);
+        });
+    </script>
+</body>
+</html>
